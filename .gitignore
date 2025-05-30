@@ -104,3 +104,6 @@ Desktop.ini
 # Temporary files
 tmp/
 temp/
+
+# Logs
+logs.txt

@@ -17,6 +17,7 @@ requireDir("./models"); // Creating mongodb model
 import routes from "./routes";
 app.use(logBuilder, routes); // Application routes
 
-app.listen(port, () =>
-    console.log(`[✔] Project running on http://localhost:${port}`)
-);
+app.listen(port, () => {
+    const apiUrl = process.env.API_URL || `http://localhost:${port}`;
+    console.log(`[✔] Project running on ${apiUrl}`);
+});

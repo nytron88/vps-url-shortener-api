@@ -1,45 +1,32 @@
 # URL Shortener API
 
-A simple URL shortener API built with TypeScript and Express.js for practice VPS deployment.
+A basic URL shortener API built for learning VPS deployment and server management.
 
-## Setup
+## Environment Setup
 
-1. Install dependencies:
-```bash
-npm install
-```
-
-2. Create a `.env` file (see `env.example`):
+Create a `.env` file with the following variables:
 ```
 MONGO_CONNECTION=mongodb://localhost:27017/url-shortener
 API_URL=http://localhost:5500
 PORT=5500
 ```
 
-3. Start the server:
-```bash
-npm run dev
-```
+## API Endpoints
 
-## API Usage
-
-**Shorten a URL:**
+**POST `/shorter`** - Create a shortened URL
 ```bash
 curl -X POST http://localhost:5500/shorter \
   -H "Content-Type: application/json" \
   -d '{"originUrl": "https://example.com"}'
 ```
 
-**Access shortened URL:**
+**GET `/:hash`** - Redirect to original URL
 ```bash
 curl http://localhost:5500/{shortCode}
 ```
 
-## Tech Stack
+## Deployment
 
-- TypeScript
-- Express.js
-- MongoDB
-- Node.js
+This API was deployed on a VPS using nginx for reverse proxy and rate limiting. 
 
-Built for practice VPS deployment and learning.
+Built with TypeScript, Express.js, and MongoDB for learning VPS deployment and basic API development.
